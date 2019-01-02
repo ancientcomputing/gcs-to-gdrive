@@ -1,21 +1,21 @@
 # gcs-to-gdrive
 
-by running the bash script to assess, the structure of the VMs and their drives will be decided
-it will not retreive back any information other than sizes and quantities
-no information is being sent anywhere other than the output file and the shell standard output 
+In order to create the right structure of download/upload and the VMs and their drives, you should run the bash script create_plan.bash
 
-in order to asses the size of transfer from the Google Cloud Storage run the following command:
+It will not retreive back any information other than sizes and quantities of objects in the given bucket
+NO information is being sent anywhere other than the output file and the shell standard output 
+
+In order to asses the size of transfer from the Google Cloud Storage run the following command:
 
 $  bash create_plan.bash BUCKET_NAME OUTPUT_FILE
+argumant 1 = BUCKET_NAME (example: gs://amiteinav-bucket)
+argument 2 = OUTPUT_FILE (example: ~/output.txt)
 
-example of running the file create_plan.bash :
+An example of running the file create_plan.bash :
 
-argumant 1 = bucket-name (example: gs://amiteinav-bucket)
-argument 2 = output-file (example: output.txt)
+$  bash create_plan.bash  gs://amiteinav-bucket output.txt
 
-$  bash create_plan.bash  gs://amiteinav-sandbox output.txt
-
-the expected output structure is:
+The expected output structure is:
 
 2019-01-03 01:03:44|info|temp_file is: /tmp/file42582
 2019-01-03 01:03:44|info|running gsutil ls -rl gs://amiteinav-sandbox | grep gs:// > /tmp/file42582
