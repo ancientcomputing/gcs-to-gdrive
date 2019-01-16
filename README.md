@@ -10,6 +10,7 @@ In order to asses the size of transfer from the Google Cloud Storage run the fol
 $  bash create_plan.bash BUCKET_NAME OUTPUT_FILE
 
 argumant 1 = BUCKET_NAME (example: gs://amiteinav-bucket)
+
 argument 2 = OUTPUT_FILE (example: ~/output.txt)
 
 An example of running the file create_plan.bash :
