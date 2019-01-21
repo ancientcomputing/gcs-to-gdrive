@@ -258,6 +258,13 @@ def resumable_download_operation(proc_id,queue,status_file,csvfile,line_no_start
     queue.put(1)
     message ('finished running resumable_download_operation {}'.format(proc_id))
 
+def do_cleanup_of_temp():
+    dir = "."
+    files = os.listdir(dir)
+    for file in files:
+        if file.endswith(".temp"):
+            os.remove(os.path.join(dir,file))
+
 def download_operation(status_file,csvfile):
 
 
@@ -453,6 +460,7 @@ def main(argv):
 
     if (start_download):
         download_operation(status_file,csvfile)
+        do_cleanup_of_temp()
 
 
 if __name__ == "__main__":
