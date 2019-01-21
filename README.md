@@ -23,3 +23,20 @@ gcloud compute --project=amiteinav-sandbox instances create gcs-to-drv-instance 
 
 
 ### Setting up the python packages ###
+
+* get the file to execute
+''git clone 
+
+## execute the copy ##
+
+### run ###
+
+the first run:
+'''time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -i
+
+to resume run:
+'''time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -s
+
+### troubleshoot ###
+for questions - please email me at amiteinav@google.com
+make sure to provide the log file with your question - **/tmp/offload_gcs_to_drive.log** 
