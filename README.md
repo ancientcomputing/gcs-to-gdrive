@@ -20,7 +20,7 @@ The following steps are required for setting up the envrionment for copying an e
 ### Creating a virtual machine ###
 * run the following command from the cloud console
 ```
-gcloud compute --project=amiteinav-sandbox instances create gcs-to-drv-instance --zone=us-central1-c --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=951308682803-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform --tags=gcs-to-drive --image=debian-9-drawfork-v20181101 --image-project=eip-images --boot-disk-size=900GB --boot-disk-type=pd-ssd --boot-disk-device-name=gcs-to-drv-instance
+gcloud compute --project=[PROJECT_NAME] instances create gcs-to-drv-instance --zone=us-central1-c --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE  --scopes=https://www.googleapis.com/auth/cloud-platform --tags=gcs-to-drive --image=debian-9-drawfork-v20181101 --image-project=eip-images --boot-disk-size=900GB --boot-disk-type=pd-ssd --boot-disk-device-name=gcs-to-drv-instance
 ```
 
 ### Setting up the python packages ###
