@@ -266,9 +266,11 @@ def download_operation(status_file,csvfile):
     code = raw_input("Enter verification code: ")
     gauth.Auth(code)
 
-    g_login = GoogleAuth()
+    #g_login = GoogleAuth()
     #g_login.LocalWebserverAuth()
-    drive = GoogleDrive(g_login)
+    #drive = GoogleDrive(g_login)
+
+    drive = GoogleDrive(gauth)
 
     lines_in_csvfile=simplecount(csvfile)
     message ('the file {} has {} lines'.format(csvfile,lines_in_csvfile))
