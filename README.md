@@ -38,6 +38,7 @@ git clone https://github.com/amiteinav/gcs-to-gdrive.git
 pip install google.cloud --user
 pip install google.cloud.storage --user
 pip install google.cloud.resource_manager --user
+pip install PyDrive --user
 
 export BUCKET_ID=amiteinav-buses
 export PROJECT_NAME=amiteinav-sandbox
