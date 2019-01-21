@@ -460,7 +460,7 @@ def main(argv):
 
     if (start_download):
         download_operation(status_file,csvfile)
-        do_cleanup_of_temp()
+        #do_cleanup_of_temp()
 
 
 if __name__ == "__main__":
