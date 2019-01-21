@@ -35,7 +35,7 @@ python get-pip.py
 
 git clone https://github.com/amiteinav/gcs-to-gdrive.git
 
-pip install -r requirements.txt 
+pip install -r requirements.txt --user
 
 export BUCKET_ID=your-bucket-id
 export PROJECT_NAME=your-project
