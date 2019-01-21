@@ -35,15 +35,14 @@ python get-pip.py
 
 git clone https://github.com/amiteinav/gcs-to-gdrive.git
 
-pip install google.cloud --user
-pip install google.cloud.storage --user
-pip install google.cloud.resource_manager --user
-pip install PyDrive --user
+pip install -r requirements.txt 
 
 export BUCKET_ID=amiteinav-buses
 export PROJECT_NAME=amiteinav-sandbox
 
 cd gcs-to-gdrive
+
+pip install -r requirements.txt 
 ```
 ### Placing the ‘client_secrets.json’ ###
 
@@ -55,6 +54,7 @@ cd gcs-to-gdrive
 ```
 gsutil cp client_secrets.json gs://${BUCKET_ID}
 ```
+
 
 * from the GCE VM you run 
 ```
@@ -73,6 +73,8 @@ time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -i
 
 to resume run:
 ```
+rm gcs-inventory.tsv gcs-stats.info status.csv
+
 time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -s
 ```
 
