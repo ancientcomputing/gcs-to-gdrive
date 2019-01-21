@@ -26,7 +26,24 @@ gcloud compute --project=amiteinav-sandbox instances create gcs-to-drv-instance 
 
 * get the file to execute
 ```
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install git -y
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+
 git clone https://github.com/amiteinav/gcs-to-gdrive.git
+
+pip install google.cloud --user
+pip install google.cloud.storage --user
+pip install google.cloud.resource_manager --user
+
+cd gcs-to-gdrive
+
+
+
+
+
 ```
 ## execute the copy ##
 
