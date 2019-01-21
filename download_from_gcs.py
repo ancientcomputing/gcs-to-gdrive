@@ -260,18 +260,21 @@ def resumable_download_operation(proc_id,queue,status_file,csvfile,line_no_start
 
 def download_operation(status_file,csvfile):
 
+
+    # Use this section to copy a link and then copy a vericiation code
     gauth = GoogleAuth()
     auth_url = gauth.GetAuthUrl() 
     print auth_url
     code = raw_input("Enter verification code: ")
     gauth.Auth(code)
+    drive = GoogleDrive(gauth)
 
+    # Use this section to just use a browser - works on a local or windows VM
     #g_login = GoogleAuth()
     #g_login.LocalWebserverAuth()
     #drive = GoogleDrive(g_login)
 
-    drive = GoogleDrive(gauth)
-
+    
     lines_in_csvfile=simplecount(csvfile)
     message ('the file {} has {} lines'.format(csvfile,lines_in_csvfile))
 
