@@ -40,12 +40,8 @@ pip install google.cloud.resource_manager --user
 
 cd gcs-to-gdrive
 
-
-
-
-
 ```
-## execute the copy ##
+## Now you are ready to start copying to Drive from GCS ##
 
 ### run ###
 
