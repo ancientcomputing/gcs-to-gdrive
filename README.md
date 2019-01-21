@@ -37,8 +37,8 @@ git clone https://github.com/amiteinav/gcs-to-gdrive.git
 
 pip install -r requirements.txt 
 
-export BUCKET_ID=amiteinav-buses
-export PROJECT_NAME=amiteinav-sandbox
+export BUCKET_ID=your-bucket-id
+export PROJECT_NAME=your-project
 
 cd gcs-to-gdrive
 
@@ -65,19 +65,20 @@ gsutil cp  gs://${BUCKET_ID}/client_secrets.json .
 
 ### run ###
 
+The first run:
+```
+nohup time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -i &
+```
 
-the first run:
-```
-time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -i
-```
+There could be a very slow transfer - Google Drive is heavier..
 
 to resume run:
 ```
-rm gcs-inventory.tsv gcs-stats.info status.csv
+rm gcs-inventory.tsv gcs-stats.info status.csv *.temp
 
-time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -s
+nohup time python download_from_gcs.py -b ${BUCKET_ID} -p ${PROJECT_NAME} -d -s -i &
 ```
 
 ### troubleshoot ###
 for questions - please email me at amiteinav@google.com
-make sure to provide the log file with your question - **/tmp/offload_gcs_to_drive.log** 
+make sure to provide the **log file** with your question(s) - **/tmp/offload_gcs_to_drive.log** 
