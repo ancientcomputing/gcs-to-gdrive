@@ -39,19 +39,33 @@ pip install google.cloud --user
 pip install google.cloud.storage --user
 pip install google.cloud.resource_manager --user
 
+export BUCKET_ID=amiteinav-buses
+export PROJECT_NAME=amiteinav-sandbox
+
 cd gcs-to-gdrive
 ```
+### Placing the ‘client_secrets.json’ ###
+
 * You will need to place the file **client_secrets.json** in this folder. 
 
-- One way to do is uploading it into a Google Cloud Storage and downloading it in the VM
+* One way to do is uploading it into a Google Cloud Storage and downloading it in the VM
+
+* from the local host you run 
+```
+gsutil cp client_secrets.json gs://${BUCKET_ID}
+```
+
+* from the GCE VM you run 
+```
+gsutil cp  gs://${BUCKET_ID}/client_secrets.json .
+```
 
 
 ## Now you are ready to start copying to Drive from GCS ##
 
 ### run ###
 
-export BUCKET_ID=amiteinav-buses
-export PROJECT_NAME=amiteinav-sandbox
+
 
 
 the first run:
