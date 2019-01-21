@@ -260,6 +260,12 @@ def resumable_download_operation(proc_id,queue,status_file,csvfile,line_no_start
 
 def download_operation(status_file,csvfile):
 
+    gauth = GoogleAuth()
+    auth_url = gauth.GetAuthUrl() 
+    print auth_url
+    code = raw_input("Enter verification code: ")
+    gauth.Auth(code)
+
     g_login = GoogleAuth()
     #g_login.LocalWebserverAuth()
     drive = GoogleDrive(g_login)
