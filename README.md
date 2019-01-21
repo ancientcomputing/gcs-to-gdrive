@@ -60,12 +60,9 @@ gsutil cp client_secrets.json gs://${BUCKET_ID}
 gsutil cp  gs://${BUCKET_ID}/client_secrets.json .
 ```
 
-
 ## Now you are ready to start copying to Drive from GCS ##
 
 ### run ###
-
-
 
 
 the first run:
