@@ -22,16 +22,16 @@ The following steps are required for setting up the envrionment for copying an e
 ```
 export PROJECT_NAME=name-of-project
 export VM_NAME=gcs-to-drv-instance
+export VM_NAME=${VM_NAME}-${RANDOM}
 
 
-
-gcloud compute instances create ${VM_NAME} --zone=us-central1-c --project=${PROJECT_NAME}  /
---machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM /
---maintenance-policy=MIGRATE /
- --scopes=https://www.googleapis.com/auth/cloud-platform --tags=gcs-to-drive /
- --image=debian-9-drawfork-v20181101 /
- --image-project=eip-images --boot-disk-size=900GB --boot-disk-type=pd-ssd /
+gcloud compute instances create ${VM_NAME} --zone=us-central1-c --project=${PROJECT_NAME}  \
+--machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM \
+--maintenance-policy=MIGRATE \
+ --scopes=https://www.googleapis.com/auth/cloud-platform --tags=gcs-to-drive \
+ --boot-disk-size=900GB --boot-disk-type=pd-ssd \
  --boot-disk-device-name=${VM_NAME}-disk
+
 ```
 
 ### Setting up the python packages ###
