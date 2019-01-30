@@ -29,7 +29,7 @@ gcloud compute instances create ${VM_NAME} --zone=us-central1-c --project=${PROJ
 --machine-type=n1-standard-4 --subnet=default --network-tier=PREMIUM \
 --maintenance-policy=MIGRATE \
  --scopes=https://www.googleapis.com/auth/cloud-platform --tags=gcs-to-drive \
- --boot-disk-size=900GB --boot-disk-type=pd-ssd \
+ --boot-disk-size=500GB --boot-disk-type=pd-ssd \
  --boot-disk-device-name=${VM_NAME}-disk
 
 ```
@@ -42,18 +42,16 @@ sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install git -y
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
+sudo python get-pip.py
 
 git clone https://github.com/amiteinav/gcs-to-gdrive.git
-
-pip install -r requirements.txt --user
 
 export BUCKET_ID=your-bucket-id
 export PROJECT_NAME=your-project
 
 cd gcs-to-gdrive
 
-pip install -r requirements.txt 
+pip install -r requirements.txt --user
 ```
 ### Placing the ‘client_secrets.json’ ###
 
